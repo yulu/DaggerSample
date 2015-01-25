@@ -1,0 +1,28 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "me.littlecheesecake.daggersample.app2"
+        minSdkVersion 15
+        targetSdkVersion 21
+        versionCode 1
+        versionName "dev"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+
+dependencies {
+    compile 'com.google.dagger:dagger:2.0-SNAPSHOT'
+    apt 'com.google.dagger:dagger-compiler:2.0-SNAPSHOT'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+}
